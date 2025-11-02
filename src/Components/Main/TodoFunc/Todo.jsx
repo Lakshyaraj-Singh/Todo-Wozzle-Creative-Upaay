@@ -1,7 +1,8 @@
 import { useSelector } from 'react-redux';
+import { Columns } from './Columns';
 
 export const Todo = () => {
-    const columns = useSelector(state => state.tasks.columns);
+    const columnss = useSelector(state => state.tasks.columns);
   const filter = useSelector(state => state.tasks.filter);
   
   
@@ -16,7 +17,21 @@ export const Todo = () => {
     <div className="space-x-1"><h1>Demo App<i></i> </h1></div>
     <div className="FilterBoxes"></div>
     <div className="colums flex justify-between">
-
+    <Columns 
+          title="To Do" 
+          columnId="todo" 
+          tasks={filterTasks(columnss.todo)} 
+        />
+        <Columns 
+          title="In Progress" 
+          columnId="inProgress" 
+          tasks={filterTasks(columnss.inProgress)} 
+        />
+        <Columns 
+          title="Done" 
+          columnId="done" 
+          tasks={filterTasks(columnss.done)} 
+        />
     </div>
     </>
   )
