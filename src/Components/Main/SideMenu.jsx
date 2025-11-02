@@ -4,7 +4,7 @@ export const SlideMenu=()=>{
         <div className='bg-purple-50 flex-col h-screen p-3 '>    
 
         
-    <h1 className="h-13 place-content-center place-self-center font-bold text-2xl">Project L</h1>
+    <h1 className=" border-r-2 h-13 place-content-center place-self-center font-bold text-2xl">Project L</h1>
     <hr />
         <div className="sec1 mb-3 ">
             <ul className="flex flex-col  gap-1">
