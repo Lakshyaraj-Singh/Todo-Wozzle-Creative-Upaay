@@ -4,12 +4,10 @@ import React from 'react'
 export const Navbar=()=>{
     return(
         <>
-        <div className="navbar bg-base-100 shadow-sm">
-  <div className="flex-1">
-    <a className="btn btn-ghost text-xl">daisyUI</a>
-  </div>
-  <div className="flex gap-2">
-    <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
+        <div className="navbar bg-base-100 w-full shadow-sm">
+ 
+    <div className='flex-1'><input type="text" placeholder="Search" className="input input-bordered w-96 " /></div> 
+  <div className="flex w-80 gap-2">
     <div className="dropdown dropdown-end">
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">

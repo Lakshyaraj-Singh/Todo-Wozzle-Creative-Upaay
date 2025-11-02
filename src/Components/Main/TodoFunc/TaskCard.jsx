@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
-import { deleteTask, moveTask } from '../store/taskSlice';
+
 import { useState } from 'react';
+import { deleteTask } from '../../../AppStore/taskSlice';
 
 export const TaskCard = ({key,task,columnId}) => {
     let [hover,setHover]=useState(false)
@@ -12,14 +13,15 @@ export const TaskCard = ({key,task,columnId}) => {
     
   return (
     <>
-    <div onClick={()=>setHover(!hover)} className="card bg-base-100 w-96 shadow-sm">
+    <div onClick={()=>setHover(!hover)} className="card bg-white w-70  text-sm shadow-sm">
     {hover?<div className="card-body" > <button onClick={handleDelete} className='btn bg-red-500 '>Delete</button></div>:
     
   <div className="card-body">
 
-    <h2 className="card-title flex flex-col ">
-      <div className="badge badge-secondary badge-outline">{task.priority}</div>
-      <span>{task.name}</span>
+    <h2 className="card-title  ">
+     
+     <div className='flex flex-col' ><div className="badge badge-secondary ">{task.priority}</div>
+      <span >{task.name}</span></div>
     </h2>
     <p className='text-xs text-gray-700'>{task.description}</p>
     <div className="card-actions justify-end">
