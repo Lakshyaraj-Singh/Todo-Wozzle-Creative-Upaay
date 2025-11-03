@@ -7,17 +7,11 @@ import { AddTask } from './AddTask';
 
 export const Columns = ({ title, columnId, tasks }) => {
     const dispatch = useDispatch();
-    let [taskDetails, SetTaskDetails] = useState(
-        {
-            taskName: "",
-            taskDesc: "",
-            priority: "high"
-        }
-    )
+   
     let [taskNew,setTaskNew]=useState(false)
 
-    const handleAddTask = (e) => {
-        e.preventDefault();
+    const handleAddTask = (taskDetails) => {
+        
         if (taskDetails.taskName.trim()) {
             dispatch(addTask({
                 columnId,
@@ -27,11 +21,8 @@ export const Columns = ({ title, columnId, tasks }) => {
                     priority: taskDetails.priority
                 }
             }));
-            SetTaskDetails({
-                taskName: "",
-                taskDesc: "",
-                priority: "high"
-            })
+            
+            console.log("Form SUbm")
 
         }
     };
@@ -50,7 +41,7 @@ export const Columns = ({ title, columnId, tasks }) => {
 
             </div>
 
-        {taskNew&&<AddTask handleAddTask={handleAddTask} onclose={()=>{SetTaskDetails(false)}} taskDetails={taskDetails}/>}  
+        {taskNew&&<AddTask handleAddTask={handleAddTask} onclose={()=>{setTaskNew(false)}}/>}  
         </>
     )
 }
