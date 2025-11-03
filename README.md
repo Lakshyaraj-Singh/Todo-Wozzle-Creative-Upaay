@@ -2,7 +2,8 @@ Note: Primary README has been moved to `frontend/README.md` for Vercel setup.
 
 # Wozzle – Creative Upaay (Frontend) Mini Project
 
-live deployement link:
+live deployement link: https://todo-wozzle-creative-upaay-wp8u.vercel.app/
+
 
 Lakshyaraj Singh Ranawat 
 
