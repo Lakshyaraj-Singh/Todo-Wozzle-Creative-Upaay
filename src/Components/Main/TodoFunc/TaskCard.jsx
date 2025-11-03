@@ -25,7 +25,7 @@ export const TaskCard = ({key,task,columnId}) => {
     </h2>
     <p className='text-xs text-gray-700'>{task.description}</p>
     <div className="card-actions justify-end">
-      <div className="text-xs text-gray-700"><i></i> 10 comments</div>
+      <div className="text-xs text-gray-700"><i class="fa-regular fa-message mr-0.5"></i> 10 comments</div>
       <div className="text-xs text-gray-700"><i>3 files</i></div>
     </div>
   </div>}

@@ -70,12 +70,23 @@ export const Todo = () => {
 
   return (
     <>
-      <div className="p-6 space-x-1">
-        <h1 className="text-3xl font-bold">Demo App 📋</h1>
+      <div className="px-6 space-x-3 flex items-center ">
+        <h1 className="text-3xl font-bold">Demo App</h1>
+        <i class="fa-regular fa-pen-to-square text-xl p-1 h-7 w-7 text-purple-600 bg-purple-200 rounded-md"></i>
+        <i class="fa-solid fa-link bg-purple-200 text-xl py-1 px-0.5 text-purple-600 rounded-md"></i>
+      <div className='ml-96 w-50 h-fit'><img src="https://static-cse.design.ing/_next/static/assets/quick-feature_2_w909xh681_e72b9fc9d2a5cfb1f37891e4c14ef9217f9fb3bc07257f586d9a2e8d333ecccc.png" alt="" /></div>
+      <p className='font-bold -ml-6 bg-purple-100 rounded-full h-7 w-7 flex justify-center items-center'><span className=''>+2</span></p>
       </div>
       
-      <div className="FilterBoxes px-6 mb-4">
-        {/* Add filter dropdown here later */}
+      <div className="FilterBoxes px-6 mb-4  flex justify-between items-center p-2">
+        <div className='flex items-center gap-1'>
+          <button className=' rounded w-25 p-2 btn bg-white'><i class="fa-solid fa-filter mr-1"></i>Filter</button>
+          <button className=' rounded w-25 p-2 btn bg-white'><i class="fa-solid fa-calendar mr-1"></i>Today</button>
+        </div>
+        <div>
+          <button className=' rounded p-2 w-25 btn text-white bg-purple-900'><i class="fa-solid fa-share mt-1"></i>Share</button>
+          <i></i>
+        </div>
       </div>
       
       <div className="columns flex justify-between gap-5 px-6">
