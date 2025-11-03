@@ -1,7 +1,7 @@
 export const SlideMenu=()=>{
     return(
         <>
-        <div className='bg-white border-[0.5px] flex-col max-h-fit sticky left-0 top-0 p-3 '>    
+        <div className='bg-white cursor-pointer border-[0.5px] flex-col max-h-fit sticky left-0 top-0 p-3 '>    
 
         
     <div className="flex items-center justify-center">

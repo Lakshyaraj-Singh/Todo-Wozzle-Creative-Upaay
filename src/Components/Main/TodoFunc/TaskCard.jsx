@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 
 import { useState } from 'react';
-import { deleteTask } from '../../../AppStore/taskSlice';
+import { deleteTask, moveTask } from '../../../AppStore/taskSlice';
 
 export const TaskCard = ({task,columnId}) => {
     const dispatch = useDispatch();
@@ -11,12 +11,24 @@ export const TaskCard = ({task,columnId}) => {
           dispatch(deleteTask({ columnId, taskId: task.id }));
         }
       };
-    const handleMove=()
+    const handleMove=(to)=>{
+     if(columnId=="todo" &&to=="p"){
+      dispatch(moveTask({fromColumn:columnId,toColumn:"inProgress",taskId: task.id}))
+     } 
+     else if((columnId=="todo" &&to=="d")){
+      dispatch(moveTask({fromColumn:columnId,toColumn:"done",taskId: task.id}))
+     }
+     else {
+      dispatch(moveTask({fromColumn:columnId,toColumn:"done",taskId: task.id}))
+     }
+    
+     
+    }
     
   return (
     <>
     <div onClick={()=>setHover(!hover)} className="card bg-white w-70  text-sm shadow-sm">
-    {hover?<div className="card-body" > <button onClick={handleDelete} className='btn bg-red-500 '>Delete</button><button onClick={handleDelete} className='btn bg-red-500 '>Move Progress</button><button onClick={handleDelete} className='btn bg-red-500 '>Move Done</button></div>:
+    {hover?<div className="card-body" > <button onClick={handleDelete} className='btn bg-red-500 '>Delete</button><button onClick={()=>{handleMove("p")}} className='btn bg-purple-500 '>Move Next</button><button onClick={()=>{handleMove("d")}} className='btn bg-yellow-500 '>Move Done</button></div>:
     
   <div className="card-body">
 
