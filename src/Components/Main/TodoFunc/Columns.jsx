@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import {TaskCard} from './TaskCard';
 import { addTask } from '../../../AppStore/taskSlice';
+import { AddTask } from './AddTask';
 
 export const Columns = ({ title, columnId, tasks }) => {
     const dispatch = useDispatch();
@@ -48,6 +49,8 @@ export const Columns = ({ title, columnId, tasks }) => {
                 </div>
 
             </div>
+
+        {taskNew&&<AddTask handleAddTask={handleAddTask} onclose={()=>{SetTaskDetails(false)}} taskDetails={taskDetails}/>}  
         </>
     )
 }

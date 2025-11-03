@@ -2,11 +2,11 @@ import { useSelector } from 'react-redux';
 import { Columns } from './Columns';
 
 export const Todo = () => {
-  // Get data from Redux store
+
   const columnss = useSelector(state => state.tasks.columns);
   const filter = useSelector(state => state.tasks.filter);
   
-  // Filter tasks based on priority
+ 
   const filterTasks = (tasks) => {
     if (filter === 'all') return tasks;
     return tasks.filter(task => task.priority === filter);
